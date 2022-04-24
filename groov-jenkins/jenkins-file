@@ -27,7 +27,7 @@ pipeline {
         stage('DEV') {
             steps {
                 echo 'deploy em dev....'
-                sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/ && rm -rf pipeline-dev-jenkins-desafio-devops_dev && git clone https://github.com/torneseumprogramador/pipeline-dev-jenkins-desafio-devops.git pipeline-dev-jenkins-desafio-devops_dev'
+                sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/ && git clone https://github.com/torneseumprogramador/pipeline-dev-jenkins-desafio-devops.git pipeline-dev-jenkins-desafio-devops_dev'
                 sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/pipeline-dev-jenkins-desafio-devops_dev/contruindo_ambiente && TF_VAR_ambiente=dev ./deploy.sh'
             }
         }
@@ -40,7 +40,7 @@ pipeline {
         stage('STAGE') {
             steps {
                 echo 'deploy em stage....'
-                sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/ && rm -rf pipeline-dev-jenkins-desafio-devops_stage && git clone https://github.com/torneseumprogramador/pipeline-dev-jenkins-desafio-devops.git pipeline-dev-jenkins-desafio-devops_stage'
+                sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/ && git clone https://github.com/torneseumprogramador/pipeline-dev-jenkins-desafio-devops.git pipeline-dev-jenkins-desafio-devops_stage'
                 sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/pipeline-dev-jenkins-desafio-devops_stage/contruindo_ambiente && TF_VAR_ambiente=stage ./deploy.sh'
             }
         }
@@ -48,7 +48,7 @@ pipeline {
         stage('PROD') {
             steps {
                 echo 'deploy em prod....'
-                sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/ && rm -rf pipeline-dev-jenkins-desafio-devops_prod && git clone https://github.com/torneseumprogramador/pipeline-dev-jenkins-desafio-devops.git pipeline-dev-jenkins-desafio-devops_prod'
+                sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/ && git clone https://github.com/torneseumprogramador/pipeline-dev-jenkins-desafio-devops.git pipeline-dev-jenkins-desafio-devops_prod'
                 sh 'cd /var/lib/jenkins/workspace/pipeline-desafio-devops/pipeline-dev-jenkins-desafio-devops_prod/contruindo_ambiente && TF_VAR_ambiente=prod ./deploy.sh'
             }
         }
