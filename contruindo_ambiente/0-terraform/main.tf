@@ -27,8 +27,8 @@ resource "aws_instance" "vm_dev" {
 }
 
 resource "aws_security_group" "dev" {
-  name        = "acessos_dev"
-  description = "acessos_dev inbound traffic"
+  name        = "acessos ${var.ambiente}"
+  description = "acessos inbound traffic"
 
   ingress = [
     {
